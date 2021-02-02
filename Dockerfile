@@ -2,4 +2,5 @@ FROM panubo/sshd
 
 LABEL maintainer="lwzm@qq.com"
 
-RUN apk add --no-cache python2
+ENV LANG=C.UTF-8
+RUN apk add --no-cache tmux
