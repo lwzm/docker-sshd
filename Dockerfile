@@ -1,6 +1,9 @@
-FROM panubo/sshd
+FROM alpine:3.11
 
 LABEL maintainer="lwzm@qq.com"
 
-RUN apk add --no-cache python2
-ENV SSH_ENABLE_ROOT=true GATEWAY_PORTS=true TCP_FORWARDING=true
+RUN apk add --no-cache openssh-server python2 \
+    && ssh-keygen -A \
+    && printf 'AllowTcpForwarding yes\nGatewayPorts clientspecified\n' >>/etc/ssh/sshd_config
+
+CMD [ "/usr/sbin/sshd", "-D", "-e" ]
