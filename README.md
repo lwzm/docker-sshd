@@ -13,10 +13,6 @@ docker run \
 ```yaml
   sshd:
     image: lwzm/sshd
-    environment:
-      SSH_ENABLE_ROOT: 'true'
-      GATEWAY_PORTS: 'true'
-      TCP_FORWARDING: 'true'
     volumes:
     - /etc/localtime:/etc/localtime:ro
     - ${HOME}/.ssh/authorized_keys:/root/.ssh/authorized_keys:ro
