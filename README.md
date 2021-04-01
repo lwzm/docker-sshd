@@ -11,7 +11,7 @@ docker run \
   sshd:
     image: lwzm/sshd
     volumes:
-    - ${HOME}/.ssh/authorized_keys:/root/.ssh/authorized_keys:ro
+    - YOUR.ssh/authorized_keys:/root/.ssh/authorized_keys:ro
     ports:
     - '22:22'
 ```
