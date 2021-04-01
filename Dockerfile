@@ -2,6 +2,7 @@ FROM alpine:3.11
 
 LABEL maintainer="lwzm@qq.com"
 
+# sshuttle needs python
 RUN apk add --no-cache openssh-server python2 \
     && ssh-keygen -A \
     && yes '' | passwd \
