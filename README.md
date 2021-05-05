@@ -26,7 +26,8 @@ cd /usr/lib/python*
 find . -name '*.py[co]' -delete
 # preheat...
 find . -name '*.py' -delete
-rm -rf idlelib/ ensurepip/ config/ lib-tk/ lib2to3/
-cd /usr
-tar czf py-lite.tgz bin/python* lib/python2.7/ lib/libpython2.7*
+# list files
+lsof -F n -p PYTHON_PID | grep dynload | cut -d ' ' -f 1 | cut -c 2-
+find /usr/lib/python2* -name '*.py?'
+ls /usr/lib/libpython* /usr/bin/python*
 ```

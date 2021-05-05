@@ -10,4 +10,4 @@ RUN apk add --no-cache openssh-server \
 CMD [ "/usr/sbin/sshd", "-D", "-e" ]
 
 # sshuttle needs python
-ADD py-lite.tgz /usr
+ADD py-lite.tgz /
